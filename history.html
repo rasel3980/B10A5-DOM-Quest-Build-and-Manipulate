@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate History</title>
+     <!-- Google font -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+     <!-- Tailwind CSS with daisy UI CDN -->
+     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+     <script src="https://cdn.tailwindcss.com"></script>
+     <!-- Font awesome CDN -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+         crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <script>
+         tailwind.config = {
+             theme: {
+                 extend: {
+                     colors: {
+                         primary: '#B4F461',
+                         secondary: '#F9F7F3',
+                     }
+                 }
+             }
+         }
+     </script>
+     <style>
+         .lexend-font {
+             font-family: "Lexend", sans-serif;
+             font-optical-sizing: auto;
+             font-weight: 400;
+             font-style: normal;
+         }
+        </style>
+
+</head>
+<body class="lexend-font">
+    <header></header>
+        <nav class=" bg-secondary ">
+            <div class="w-11/12 flex justify-between mx-auto py-8">
+                <div>
+                    <button class="bg-primary px-8 py-2 rounded"><a href="">Blog</a></button>
+                </div>
+                <div class="flex justify-center items-center gap-4">
+                    <img src="assets/logo.png" alt="">
+                    <h2>Donate Bangladesh</h2>
+                </div>
+                <div class="flex justify-center items-center gap-3">
+                    <img src="assets/coin.png" alt="">
+                    <h1>15500 BDT</h1>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="flex justify-center gap-5 py-12">
+            <button id="donation-btn-color" class="btn btn-lg">Donation</button>
+            <button id="history-btn-color" class="btn btn-lg">History</button>
+        </div>
+    <footer>
+        
+    </footer>
+    <script src="./js/donate.js"></script>
+</body>
+</html>
