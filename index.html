@@ -51,7 +51,7 @@
                 </div>
                 <div class="flex justify-center items-center gap-3">
                     <img src="assets/coin.png" alt="">
-                    <h1><span id="main-balance ">15500</span> BDT</h1>
+                    <h1><span id="main-balance">15500</span> BDT</h1>
                 </div>
             </div>
         </nav>
@@ -112,7 +112,7 @@
                         <input id="input-value2" type="number" placeholder="Write Donation Amount"
                             class="input input-bordered input-md w-full" />
                         <br>
-                        <button onclick="my_modal_5.showModal();clearInput2()" id="donate-button2"
+                        <button onclick="my_modal_5.showModal()" id="donate-button2"
                             class="donate-button btn btn-block bg-primary text-xl font-semibold mt-3">Donate
                             Now</button>
                     </div>
@@ -152,7 +152,7 @@
                         <input id="input-value3" type="number" placeholder="Write Donation Amount"
                             class="input input-bordered input-md w-full" />
                         <br>
-                        <button onclick="my_modal_5.showModal();clearInput3()" id="donate-button3"
+                        <button onclick="my_modal_5.showModal()" id="donate-button3"
                             class="btn btn-block bg-primary text-xl font-semibold mt-3">Donate
                             Now</button>
                     </div>
@@ -179,13 +179,12 @@
         </section>
     </footer>
     <script>
-
         const mainSectionHide = document.getElementById('main-section')
         const hide = document.getElementById('history-section')
         const historyButton = document.getElementById('history-btn');
         historyButton.addEventListener('click', function () {
             hide.classList.remove('hidden');
-            if (historyButton) {
+            if(historyButton){
                 mainSectionHide.classList.add('hidden');
             }
         })
@@ -193,7 +192,7 @@
         const historySection = document.getElementById('history-section')
         const donationButton = document.getElementById('donation-btn');
         donationButton.addEventListener('click', function () {
-            if (donationButton) {
+            if(donationButton){
                 historySection.classList.add('hidden');
             }
             mainSection.classList.remove('hidden');
@@ -203,94 +202,92 @@
         document.getElementById('donate-button').addEventListener('click', function () {
             const donateValue = donateInput.value;
             const div = document.createElement('div');
-            div.textContent = donateValue + '   Taka is Donated for Aid for Injured in the Quota Movement, Bangladesh';
+            div.textContent = donateValue + ' Taka is Donated for Flood at Noakhali, Bangladesh';
             div.classList.add('border', 'border-solid', 'p-6', 'rounded-2xl');
             parentContainer.appendChild(div);
-            // console.log('button1 click', donateValue);
+            console.log('button1 click', donateValue);
             const mainBalance = document.getElementById('main-balance');
-            console.log(mainBalance);
-            // if (donateValue < mainBalance && donateValue<15500 && donateValue>0){
-            const newBalance = parseFloat(mainBalance.innerText);
+            if (donateValue < mainBalance && donateValue<15500 && donateValue>0){
+            const newBalance = mainBalance.innerText;
             const updateBalance = newBalance - donateValue;
             console.log(newBalance, updateBalance);
             mainBalance.innerText = updateBalance;
             const donatedAmount = document.getElementById('first-donate-balance');
-            const donatedBalance = parseFloat(donatedAmount.innerText);
+            const donatedBalance = donatedAmount.innerText;
             const updateDonatedAmount = parseFloat(donatedBalance) + parseFloat(donateValue);
             donatedAmount.innerText = updateDonatedAmount;
             console.log(updateDonatedAmount);
-            alert('Successful');
-            // }
-            // else {
-            //     alert('sorry');
-            // }
+            
+            }
+            else {
+                alert('sorry');
+            }
         })
 
-        // const parentContainer = document.getElementById('history-container');
-        // const donateInput = document.getElementById('input-value');
-        // document.getElementById('donate-button').addEventListener('click', function () {
-        //     const donateValue = parseFloat(donateInput.value);
-        //     if(donateValue<=0 || donateValue>1550){
-        //         alert('Please enter a valid donation amount.');
-        //         return;
-        //     }
-        //     const div = document.createElement('div');
-        //     div.textContent = donateValue + '  Taka is Donated for Flood Relief in Feni,Bangladesh';
-        //     div.classList.add('border', 'border-solid', 'p-6', 'rounded-2xl');
-        //     parentContainer.appendChild(div);
-        //     console.log('button2 click', donateValue);
-        //     const mainBalance = document.getElementById('main-balance');
-        //     if ( 15500>donateValue || donateValue>0){
-        //     const currentBalance = parseFloat(mainBalance.innerText);
-        //     const updateBalance = currentBalance - donateValue;
-        //     console.log(newBalance, updateBalance);
-        //     mainBalance.innerText = updateBalance;
-        //     const donatedAmount = document.getElementById('second-donate-balance');
-        //     const donatedBalance = parseFloat(donatedAmount.innerText);
-        //     const updateDonatedAmount = donatedBalance + donateValue;
-        //     donatedAmount.innerText = updateDonatedAmount;
-        //     console.log(updateDonatedAmount);
-        //     alert('Successful');
-        //     }
-        //     else {
-        //         alert('sorry');
-        //     }
-        // }) 
+        const parentContainer2 = document.getElementById('history-container2');
+        const donateInput2 = document.getElementById('input-value2');
+        document.getElementById('donate-button2').addEventListener('click', function () {
+            const donateValue2 = donateInput2.value;
+            const div = document.createElement('div');
+            div.textContent = donateValue2 + '  Taka is Donated for Flood Relief in Feni,Bangladesh'; 
+            div.classList.add('border', 'border-solid', 'p-6', 'rounded-2xl');
+            parentContainer2.appendChild(div);
+            console.log('button1 click', donateValue2);
+            const mainBalance = document.getElementById('main-balance');
+            if (donateValue2 < mainBalance && donateValue2<15500 && donateValue2>0){
+            const newBalance = mainBalance.innerText;
+            const updateBalance = newBalance - donateValue2;
+            console.log(newBalance, updateBalance);
+            mainBalance.innerText = updateBalance;
+            const donatedAmount = document.getElementById('second-donate-balance');
+            const donatedBalance2 = donatedAmount.innerText;
+            const updateDonatedAmount = parseFloat(donatedBalance2) + parseFloat(donateValue2);
+            donatedAmount.innerText = updateDonatedAmount;
+            console.log(updateDonatedAmount);
+            
+            }
+            else {
+                alert('sorry');
+            }
+        })
+
+
         const parentContainer3 = document.getElementById('history-container3');
         const donateInput3 = document.getElementById('input-value3');
         document.getElementById('donate-button3').addEventListener('click', function () {
             const donateValue3 = donateInput3.value;
             const div = document.createElement('div');
-            div.textContent = donateValue3 + '   Taka is Donated for Aid for Injured in the Quota Movement, Bangladesh';
+            div.textContent = donateValue3 + '  Taka is Donated for Aid for Injured in the Quota Movement'; 
             div.classList.add('border', 'border-solid', 'p-6', 'rounded-2xl');
             parentContainer3.appendChild(div);
             console.log('button1 click', donateValue3);
             const mainBalance = document.getElementById('main-balance');
-            // if (donateValue3 < mainBalance && donateValue3<15500 && donateValue3>0){
+            if (donateValue3 < mainBalance && donateValue3<15500 && donateValue3>0){
             const newBalance = mainBalance.innerText;
             const updateBalance = newBalance - donateValue3;
             console.log(newBalance, updateBalance);
             mainBalance.innerText = updateBalance;
             const donatedAmount = document.getElementById('third-donate-balance');
-            const donatedBalance = donatedAmount.innerText;
-            const updateDonatedAmount = parseFloat(donatedBalance) + parseFloat(donateValue3);
+            const donatedBalance3 = donatedAmount.innerText;
+            const updateDonatedAmount = parseFloat(donatedBalance3) + parseFloat(donateValue3);
             donatedAmount.innerText = updateDonatedAmount;
             console.log(updateDonatedAmount);
-            alert('Successful');
-            // }
-            // else {
-            //     alert('sorry');
-            // }
+            
+            }
+            else {
+                alert('sorry');
+            }
         })
-        function clearInput() {
-            document.getElementById('input-value').value = '';
-        }
-        function clearInput2() {
-            document.getElementById('input-value2').value = '';
-        }
-        function clearInput3() {
-            document.getElementById('input-value3').value = '';
-        }
+        // })
+        // function clearInput() {
+        //     document.getElementById('input-value').value = '';
+        // }
+        // function clearInput2() {
+        //     document.getElementById('input-value2').value = '';
+        // }
+        // function clearInput3() {
+        //     document.getElementById('input-value3').value = '';
+        // }
 
         // button color: 
         const buttons = document.querySelectorAll('.toggle-btn');
