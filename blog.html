@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Related Question</title>
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS with daisy UI CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#B4F461',
+                        secondary: '#F9F7F3',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .answer {
+            display: none; /* Hide answers initially */
+        }
+        .lexend-font {
+            font-family: "Lexend", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+        }
+    </style>
+</head>
+
+<body class="lexend-font p-9">
+    <!-- <section class="w-11/12 mx-auto py-12">
+        <h1 class="text-3xl">1. What is the Document Object Model (DOM)?</h1>
+        <h1>2. How do you select an element from the DOM?
+        </h1>
+        <h1>3. What is event delegation in the context of the DOM, and why is it useful?</h1>
+        <h1>4. How do you manipulate an element's attributes and styles using the DOM?
+        </h1>
+    </section> -->
+    <section class="w-11/12 mx-auto py-12"></section>
+        <h1 class="text-3xl cursor-pointer question" data-answer="The Document Object Model (DOM) is a programming interface for web documents that represents the structure of a webpage as a tree of objects. It allows languages like JavaScript to dynamically access and manipulate the content, structure, and style of HTML and XML documents, enabling developers to change the document structure, style, and behavior on the fly.">
+            1. What is the Document Object Model (DOM)?
+        </h1>
+        <p class="answer"></p>
+
+        <h1 class="text-3xl cursor-pointer question" data-answer="I can select an element from the DOM using several methods in JavaScript:
+        1. getElementById(): Selects an element by its unique ID 
+        2. getElementsByClassName(): Selects all elements with a specific class name (returns a live HTMLCollection)
+        3.getElementsByTagName(): Selects all elements with a specific tag name (returns a live HTMLCollection)
+        4. querySelector(): Selects the first element that matches a specified CSS selector
+        5. querySelectorAll(): Selects all elements that match a specified CSS selector (returns a static NodeList)
+        ">
+            2. How do you select an element from the DOM?
+        </h1>
+        <p class="answer"></p>
+
+        <h1 class="text-3xl cursor-pointer question" data-answer="Event delegation is a technique in the DOM where a single event listener is added to a parent element instead of adding individual listeners to each child element. When an event occurs on a child element, the event bubbles up to the parent, allowing the parent to handle the event.
+        Performance: Reduces memory usage and improves performance by minimizing the number of event listeners, especially in lists or dynamic content.
+        Dynamic Elements: Automatically works with newly added child elements without needing to reassign event listeners.
+        Simplified Code: Makes the code cleaner and easier to manage, as you handle events in one place rather than across multiple elements.">
+            3. What is event delegation in the context of the DOM, and why is it useful?
+        </h1>
+        <p class="answer"></p>
+
+        <h1 class="text-3xl cursor-pointer question" data-answer="You can manipulate an element's attributes and styles using the DOM with the following methods: setAttribute(): Sets the value of an attribute on an element.getAttribute(): Retrieves the value of a specified attribute removeAttribute(): Removes a specified attribute from an element. Styles : classList Methods: You can manipulate classes using classList to add, remove, or toggle classes.">
+            4. How do you manipulate an element's attributes and styles using the DOM?
+        </h1>
+        <p class="answer"></p>
+    </section>
+    <script>
+        document.querySelectorAll('.question').forEach(question => {
+    question.addEventListener('click', function() {
+        const answerText = this.getAttribute('data-answer');
+        const answerElement = this.nextElementSibling; // Select the corresponding answer <p>
+
+        // Toggle answer visibility
+        if (answerElement.style.display === 'block') {
+            answerElement.style.display = 'none'; // Hide if already visible
+            answerElement.textContent = ''; // Clear the text
+        } else {
+            answerElement.textContent = answerText; // Set the answer text
+            answerElement.style.display = 'block'; // Show the answer
+        }
+    });
+});
+
+    </script>
+</body>
+
+</html>

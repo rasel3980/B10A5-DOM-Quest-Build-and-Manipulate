@@ -40,10 +40,10 @@
 
 <body class="lexend-font">
     <header>
-        <nav class=" bg-secondary ">
+        <nav class=" bg-secondary sticky top-0 z-50">
             <div class="w-11/12 flex justify-between mx-auto py-8">
                 <div>
-                    <button class="bg-primary px-8 py-2 rounded"><a href="">Blog</a></button>
+                    <button class="bg-primary px-8 py-2 rounded"><a href="/blog.html">Blog</a></button>
                 </div>
                 <div class="flex justify-center items-center gap-4">
                     <img src="assets/logo.png" alt="">
@@ -51,15 +51,15 @@
                 </div>
                 <div class="flex justify-center items-center gap-3">
                     <img src="assets/coin.png" alt="">
-                    <h1><span id="main-balance">15500</span> BDT</h1>
+                    <h1><span id="main-balance ">15500</span> BDT</h1>
                 </div>
             </div>
         </nav>
     </header>
     <main class="w-11/12 mx-auto py-12">
         <div class="flex justify-center items-center gap-5">
-            <button id="donation-btn" class="btn btn-lg">Donation</button>
-            <button id="history-btn" class="btn btn-lg">History</button>
+            <button id="donation-btn" class="toggle-btn rounded-lg border btn-lg">Donation</button>
+            <button id="history-btn" class="toggle-btn rounded-lg border btn-lg">History</button>
         </div>
         <section id="main-section" class=" py-10">
             <div class="lg:grid lg:grid-cols-2 md:grid md:grid-cols-2 gap-5 border p-4 rounded-lg mb-8">
@@ -73,7 +73,8 @@
                         <h1><span id="first-donate-balance">50000</span> BDT</h1>
                     </button>
                     <div id="">
-                        <h1 id="at-noakhali" class=" Noakhali font-bold text-xl py-3">Donate for Flood at Noakhali, Bangladesh</h1>
+                        <h1 id="at-noakhali" class=" Noakhali font-bold text-xl py-3">Donate for Flood at Noakhali,
+                            Bangladesh</h1>
                         <p>
                             The recent floods in Noakhali have caused significant damage to homes infrastructure. Your
                             donation will help provide essential supplies and to those affected by this disaster. Every
@@ -81,12 +82,12 @@
                             efforts and making a positive impact on the lives of those in need.
                         </p>
                         <br>
-                        <input id="input-value" type="text" placeholder="Write Donation Amount"
+                        <input id="input-value" type="number" placeholder="Write Donation Amount"
                             class="input input-bordered input-md w-full" />
                         <br>
                         <br>
-                        <button id="donate-button"
-                            class="donate-button btn btn-block bg-primary text-xl font-semibold ">Donate Now</button>
+                        <button id="donate-button" class="donate-button btn btn-block bg-primary text-xl font-semibold "
+                            onclick="my_modal_5.showModal()">Donate Now</button>
                     </div>
                 </div>
             </div>
@@ -97,7 +98,9 @@
                     </div>
                 </div>
                 <div>
-                    <button class="btn btn-sm mt-4 md:mt-0 lg:mt-0"> <img src="assets/coin.png" alt=""><h1><span id="second-donate-balance">75000</span> BDT</h1></button>
+                    <button class="btn btn-sm mt-4 md:mt-0 lg:mt-0"> <img src="assets/coin.png" alt="">
+                        <h1><span id="second-donate-balance">75000</span> BDT</h1>
+                    </button>
                     <div class="">
                         <h1 class="font-bold text-xl py-3">Donate for Flood Relief in Feni,Bangladesh</h1>
                         <p class="pb-4">
@@ -106,13 +109,26 @@
                             contribution, big or small, makes difference. Please join us in supporting the relief
                             efforts and making a positive impact on the lives of those in need.
                         </p>
-                        <input id="input-value2" type="text" placeholder="Write Donation Amount"
+                        <input id="input-value2" type="number" placeholder="Write Donation Amount"
                             class="input input-bordered input-md w-full" />
                         <br>
-                        <button id="donate-button2"
+                        <button onclick="my_modal_5.showModal();clearInput2()" id="donate-button2"
                             class="donate-button btn btn-block bg-primary text-xl font-semibold mt-3">Donate
                             Now</button>
                     </div>
+                    <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+                        <div class="modal-box text-center">
+                            <h3 class="text-2xl  font-bold">Congrates!</h3>
+                            <img class="mx-auto my-4" src="assets/coin.png" alt="">
+                            <p class="py-4">You Have Donated for Humankind</p>
+                            <p class="font-extrabold text-xl">Successfully</p>
+                            <p class="modal-action text-center mx-auto">
+                            <form method="dialog">
+                                <button class="btn ">Close Conformation</button>
+                            </form>
+                            </p>
+                        </div>
+                    </dialog>
                 </div>
             </div>
             <div class="lg:grid lg:grid-cols-2 md:grid md:grid-cols-2 gap-5 border p-4 rounded-lg mb-8">
@@ -122,7 +138,9 @@
                     </div>
                 </div>
                 <div>
-                    <button class="btn btn-sm mt-4 md:mt-0 lg:mt-0"> <img src="assets/coin.png" alt=""><h1><span id="third-donate-balance">35700</span> BDT</h1></button>
+                    <button class="btn btn-sm mt-4 md:mt-0 lg:mt-0"> <img src="assets/coin.png" alt="">
+                        <h1><span id="third-donate-balance">35700</span> BDT</h1>
+                    </button>
                     <div class="">
                         <h1 class="font-bold text-xl py-3">Aid for Injured in the Quota Movement</h1>
                         <p class="pb-4">
@@ -131,21 +149,27 @@
                             contribution, big or small, makes difference. Please join us in supporting the relief
                             efforts and making a positive impact on the lives of those in need.
                         </p>
-                        <input id="input-value3" type="text" placeholder="Write Donation Amount"
+                        <input id="input-value3" type="number" placeholder="Write Donation Amount"
                             class="input input-bordered input-md w-full" />
                         <br>
-                        <button id="donate-button3" class="btn btn-block bg-primary text-xl font-semibold mt-3">Donate
+                        <button onclick="my_modal_5.showModal();clearInput3()" id="donate-button3"
+                            class="btn btn-block bg-primary text-xl font-semibold mt-3">Donate
                             Now</button>
                     </div>
                 </div>
             </div>
+
         </section>
         <section id="history-section" class="hidden w-11/12 py-8 mx-auto">
 
             <div id="history-container" class="grid gap-5">
+                <p id="time-container"></p>
+            </div>
             <div id="history-container2" class="grid gap-5">
+                <p id="time-container2"></p>
+            </div>
             <div id="history-container3" class="grid gap-5">
-    
+                <p id="time-container3"></p>
             </div>
         </section>
     </main>
@@ -155,12 +179,13 @@
         </section>
     </footer>
     <script>
+
         const mainSectionHide = document.getElementById('main-section')
         const hide = document.getElementById('history-section')
         const historyButton = document.getElementById('history-btn');
         historyButton.addEventListener('click', function () {
             hide.classList.remove('hidden');
-            if(historyButton){
+            if (historyButton) {
                 mainSectionHide.classList.add('hidden');
             }
         })
@@ -168,7 +193,7 @@
         const historySection = document.getElementById('history-section')
         const donationButton = document.getElementById('donation-btn');
         donationButton.addEventListener('click', function () {
-            if(donationButton){
+            if (donationButton) {
                 historySection.classList.add('hidden');
             }
             mainSection.classList.remove('hidden');
@@ -178,52 +203,70 @@
         document.getElementById('donate-button').addEventListener('click', function () {
             const donateValue = donateInput.value;
             const div = document.createElement('div');
-            div.textContent = donateValue + ' Taka is Donated for Flood at Noakhali, Bangladesh';
+            div.textContent = donateValue + '   Taka is Donated for Aid for Injured in the Quota Movement, Bangladesh';
             div.classList.add('border', 'border-solid', 'p-6', 'rounded-2xl');
             parentContainer.appendChild(div);
-            console.log('button1 click', donateValue);
+            // console.log('button1 click', donateValue);
             const mainBalance = document.getElementById('main-balance');
-            const newBalance = mainBalance.innerText;
+            console.log(mainBalance);
+            // if (donateValue < mainBalance && donateValue<15500 && donateValue>0){
+            const newBalance = parseFloat(mainBalance.innerText);
             const updateBalance = newBalance - donateValue;
             console.log(newBalance, updateBalance);
             mainBalance.innerText = updateBalance;
             const donatedAmount = document.getElementById('first-donate-balance');
-            const donatedBalance = donatedAmount.innerText;
+            const donatedBalance = parseFloat(donatedAmount.innerText);
             const updateDonatedAmount = parseFloat(donatedBalance) + parseFloat(donateValue);
             donatedAmount.innerText = updateDonatedAmount;
             console.log(updateDonatedAmount);
+            alert('Successful');
+            // }
+            // else {
+            //     alert('sorry');
+            // }
+        })
 
-        })
-        const parentContainer2 = document.getElementById('history-container2');
-        const donateInput2 = document.getElementById('input-value2');
-        document.getElementById('donate-button2').addEventListener('click', function () {
-            const donateValue2 = donateInput2.value;
-            const div = document.createElement('div');
-            div.textContent = donateValue2 + '  Taka is Donated for Flood Relief in Feni,Bangladesh'; 
-            div.classList.add('border', 'border-solid', 'p-6', 'rounded-2xl');
-            parentContainer2.appendChild(div);
-            console.log('button1 click', donateValue2);
-            const mainBalance = document.getElementById('main-balance');
-            const newBalance = mainBalance.innerText;
-            const updateBalance = newBalance - donateValue2;
-            console.log(newBalance, updateBalance);
-            mainBalance.innerText = updateBalance;
-            const donatedAmount = document.getElementById('second-donate-balance');
-            const donatedBalance = donatedAmount.innerText;
-            const updateDonatedAmount = parseFloat(donatedBalance) + parseFloat(donateValue2);
-            donatedAmount.innerText = updateDonatedAmount;
-            console.log(updateDonatedAmount);
-        })
+        // const parentContainer = document.getElementById('history-container');
+        // const donateInput = document.getElementById('input-value');
+        // document.getElementById('donate-button').addEventListener('click', function () {
+        //     const donateValue = parseFloat(donateInput.value);
+        //     if(donateValue<=0 || donateValue>1550){
+        //         alert('Please enter a valid donation amount.');
+        //         return;
+        //     }
+        //     const div = document.createElement('div');
+        //     div.textContent = donateValue + '  Taka is Donated for Flood Relief in Feni,Bangladesh';
+        //     div.classList.add('border', 'border-solid', 'p-6', 'rounded-2xl');
+        //     parentContainer.appendChild(div);
+        //     console.log('button2 click', donateValue);
+        //     const mainBalance = document.getElementById('main-balance');
+        //     if ( 15500>donateValue || donateValue>0){
+        //     const currentBalance = parseFloat(mainBalance.innerText);
+        //     const updateBalance = currentBalance - donateValue;
+        //     console.log(newBalance, updateBalance);
+        //     mainBalance.innerText = updateBalance;
+        //     const donatedAmount = document.getElementById('second-donate-balance');
+        //     const donatedBalance = parseFloat(donatedAmount.innerText);
+        //     const updateDonatedAmount = donatedBalance + donateValue;
+        //     donatedAmount.innerText = updateDonatedAmount;
+        //     console.log(updateDonatedAmount);
+        //     alert('Successful');
+        //     }
+        //     else {
+        //         alert('sorry');
+        //     }
+        // }) 
         const parentContainer3 = document.getElementById('history-container3');
         const donateInput3 = document.getElementById('input-value3');
         document.getElementById('donate-button3').addEventListener('click', function () {
             const donateValue3 = donateInput3.value;
             const div = document.createElement('div');
-            div.textContent = donateValue3 + '   Taka is Donated for Aid for Injured in the Quota Movement, Bangladesh'; 
+            div.textContent = donateValue3 + '   Taka is Donated for Aid for Injured in the Quota Movement, Bangladesh';
             div.classList.add('border', 'border-solid', 'p-6', 'rounded-2xl');
             parentContainer3.appendChild(div);
             console.log('button1 click', donateValue3);
             const mainBalance = document.getElementById('main-balance');
+            // if (donateValue3 < mainBalance && donateValue3<15500 && donateValue3>0){
             const newBalance = mainBalance.innerText;
             const updateBalance = newBalance - donateValue3;
             console.log(newBalance, updateBalance);
@@ -233,9 +276,33 @@
             const updateDonatedAmount = parseFloat(donatedBalance) + parseFloat(donateValue3);
             donatedAmount.innerText = updateDonatedAmount;
             console.log(updateDonatedAmount);
+            alert('Successful');
+            // }
+            // else {
+            //     alert('sorry');
+            // }
         })
+        function clearInput() {
+            document.getElementById('input-value').value = '';
+        }
+        function clearInput2() {
+            document.getElementById('input-value2').value = '';
+        }
+        function clearInput3() {
+            document.getElementById('input-value3').value = '';
+        }
+
+        // button color: 
+        const buttons = document.querySelectorAll('.toggle-btn');
+
+        buttons.forEach(button => {
+            button.addEventListener('click', function () {
+                buttons.forEach(btn => btn.classList.remove('bg-[#B4F461]', 'text-white'));
+                this.classList.add('bg-[#B4F461]', 'text-white');
+            });
+        });
     </script>
-    <script src="./js/donate.js"></script>
+
 </body>
 
 </html>
